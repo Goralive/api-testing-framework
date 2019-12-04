@@ -1,2 +1,3 @@
 rootProject.name = 'automation-api-java'
+include 'api-test'
 
