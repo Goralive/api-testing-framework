@@ -2,8 +2,8 @@ node {
 
         stage("checkout repo") {
             git branch: 'master',
-            credentialsId: 'your jenkins url',
-            url: 'your git hub url'
+            credentialsId: '615f10ab-dfbe-40d3-8724-0fe7ba578e95',
+            url: 'https://github.com/Goralive/api-testing-framework.git'
         }
 
         stage("build"){
@@ -11,9 +11,10 @@ node {
         }
 
         stage("run api test"){
-                sh "./gradlew api-test:test -Dlogging=${LOGGING}"
+            sh "./gradlew api-test:test"
         }
-          allure([
+
+        allure([
             includeProperties: false,
             jdk: '',
             properties: [],

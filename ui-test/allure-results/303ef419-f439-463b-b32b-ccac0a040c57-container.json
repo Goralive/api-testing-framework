@@ -1,0 +1,1 @@
+{"uuid":"303ef419-f439-463b-b32b-ccac0a040c57","name":"automation-api-java","children":["29f5fa6e-a6a9-4017-a691-9c886373b0c2"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1575562076827,"stop":1575562077176}],"afters":[],"links":[],"start":1575562076799,"stop":1575562084678}
