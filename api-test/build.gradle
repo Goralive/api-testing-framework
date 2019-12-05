@@ -30,6 +30,7 @@ dependencies {
     compile "ch.qos.logback:logback-classic:$logbackVersion"
     compile "ch.qos.logback:logback-core:$logbackVersion"
     compile "org.aeonbits.owner:owner:$ownerVersion"
+    compile "io.qameta.allure:allure-rest-assured:2.12.1" 
 
 
     compile "com.github.javafaker:javafaker:$fakerVersion"
@@ -45,5 +46,14 @@ test {
         showStandardStreams = true
         exceptionFormat = 'full'
     }
+
+
     test.outputs.upToDateWhen { false }
+}
+
+allure {
+    autoconfigure = true
+    version = '2.5.0'
+    aspectjweaver = 'true'
+    configuration = 'compile'
 }
