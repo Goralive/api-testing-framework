@@ -19,3 +19,14 @@ dependencies {
     compile "com.codeborne:selenide:4.14.2"
     testCompile "org.testng:testng:$testNGVersion"
 }
+
+allure {
+    version = '2.5.0'
+    aspectjweaver = 'true'
+    configuration = 'compile'
+    autoconfigure = true
+
+    useTestNG {
+        version = '2.12.1'
+    }
+}
