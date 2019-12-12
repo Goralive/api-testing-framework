@@ -20,6 +20,21 @@ dependencies {
     testCompile "org.testng:testng:$testNGVersion"
 }
 
+test {
+    useTestNG()
+
+    systemProperties System.getProperties()
+
+    testLogging {
+        events "Passed", "Skipped", "Failed"
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+
+    test.outputs.upToDateWhen { false }
+}
+
 allure {
     version = '2.5.0'
     aspectjweaver = 'true'
