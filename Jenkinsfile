@@ -2,16 +2,21 @@ node {
 
         stage("checkout repo") {
             git branch: 'master',
-            credentialsId: '615f10ab-dfbe-40d3-8724-0fe7ba578e95',
-            url: 'https://github.com/Goralive/api-testing-framework.git'
+            credentialsId: '-',
+            url: '-'
         }
 
         stage("build"){
             sh "./gradlew clean api-test:assemble"
         }
 
-        stage("run api test"){
+        stage("run api tests"){
             sh "./gradlew api-test:test"
+        }
+
+        stage("run ui tests"){
+            sh "./gradlew ui-test:test -Dlogging={LOGGING}"
+
         }
 
         allure([
@@ -19,6 +24,6 @@ node {
             jdk: '',
             properties: [],
             reportBuildPolicy: 'ALWAYS',
-            results: [[path: 'api/build/allure-results'],[path: 'ui/build/allure-results']]
+            results: [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
             ])
 }
